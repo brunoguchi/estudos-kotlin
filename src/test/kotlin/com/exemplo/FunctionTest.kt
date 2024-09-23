@@ -37,7 +37,7 @@ class FunctionTest {
         doReturn(Logger.getGlobal()).`when`(context).logger
 
         // Invoke
-        val ret = FunctionHttp1().run(req, context)
+        val ret = FunctionsHandler().run(req, context)
 
         // Verify
         assertEquals(ret.status, HttpStatus.OK)
