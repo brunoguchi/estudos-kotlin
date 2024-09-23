@@ -899,5 +899,7 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+*.settings.json
+target
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Java,Kotlin,Csharp,Intellij,VisualStudio,net
