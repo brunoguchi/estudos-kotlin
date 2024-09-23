@@ -57,6 +57,20 @@ class FunctionsHandler {
         sendMessageToQueue(message, context)
     }
 
+    @FunctionName("QueueTrigger-Kotlin-2")
+    fun runQueueTrigger2(
+        @ServiceBusQueueTrigger(
+            name = "message2",
+            queueName = "test-db1-noguchi-corequeueupdatestock",
+            connection = "AzureWebJobsStorage"
+        ) message: String,
+        context: ExecutionContext
+    ) {
+        context.logger.info("Java Service Bus Queue trigger function executed.")
+        context.logger.info(message)
+        sendMessageToQueue(message, context)
+    }
+
     fun sendMessageToQueue(values: String, context: ExecutionContext) {
         val connectionString = System.getenv("AzureWebJobsStorage")
 
